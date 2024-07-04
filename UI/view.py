@@ -14,7 +14,7 @@ class View(ft.UserControl):
         # graphical elements
         self._title = None
         self.ddyear = None
-        self.ddshape = None
+        self.txt_xg = None
         self.btn_graph = None
         self.txt_result = None
         self.txt_container = None
@@ -26,17 +26,17 @@ class View(ft.UserControl):
 
     def load_interface(self):
         # title
-        self._title = ft.Text("Lab13 - Ufo sighting", color="blue", size=24)
+        self._title = ft.Text("Esame 23/07/2018 - Ufo sighting", color="blue", size=24)
         self._page.controls.append(self._title)
 
         #ROW with some controls
         self.ddyear = ft.Dropdown(label="Anno")
-        self.ddshape = ft.Dropdown(label="Shape")
+        self.txt_xg = ft.TextField(label="xG")
 
 
         # button for the "creat graph" reply
         self.btn_graph = ft.ElevatedButton(text="Crea Grafo", on_click=self._controller.handle_graph)
-        row1 = ft.Row([self.ddyear,self.ddshape, self.btn_graph],
+        row1 = ft.Row([self.ddyear, self.txt_xg, self.btn_graph],
                       alignment=ft.MainAxisAlignment.CENTER)
         self._page.controls.append(row1)
 
